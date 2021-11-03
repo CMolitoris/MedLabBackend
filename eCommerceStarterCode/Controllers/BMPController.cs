@@ -43,7 +43,7 @@ namespace eCommerceStarterCode.Controllers
         }
 
         //-- GET api/BMP/{testId} --//
-        [HttpGet("{testId}/")]
+        [HttpGet("{testId}")]
         public IActionResult GetIdOrders(int testId)
         {
             var selectedCar = _context.BMPs.Where(c => c.Id == testId).SingleOrDefault();
@@ -51,7 +51,7 @@ namespace eCommerceStarterCode.Controllers
         }
 
         //-- PUT api/BMP/edit/{carId} --//
-        [HttpPut("edit/{testId}/")]
+        [HttpPut("edit/{testId}")]
         public IActionResult UpdateCar(int testId, [FromBody] BMP value)
         {
             var test = _context.BMPs.Where(o => o.Id == testId).SingleOrDefault();
@@ -76,7 +76,7 @@ namespace eCommerceStarterCode.Controllers
         }
 
         //-- DELETE api/BMP/delete/{testId}/ --//
-        [HttpDelete("delete/{testId}/")]
+        [HttpDelete("delete/{testId}")]
         public IActionResult DeleteCar(int testId)
         {
             BMP test = _context.BMPs.Where(c => c.Id == testId).SingleOrDefault();

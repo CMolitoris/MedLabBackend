@@ -31,7 +31,7 @@ namespace eCommerceStarterCode.Controllers
             return Ok(ConditionLists);
         }
 
-        [HttpGet("all/{userId}/")]
+        [HttpGet("all/{userId}")]
         public IActionResult GetAllConditionListsUser(string userId)
         {
             var UserCBC = _context.ConditionLists.Where(uc => uc.UserId == userId).Include(uc => uc.Condition).ToList();

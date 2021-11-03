@@ -42,7 +42,7 @@ namespace eCommerceStarterCode.Controllers
 
 
         //-- PUT api/Condition/edit/{conditionId} --//
-        [HttpPut("edit/{conditionId}/")]
+        [HttpPut("edit/{conditionId}")]
         public IActionResult UpdateCondition(int conditionId, [FromBody] Condition value)
         {
             var condition = _context.Conditions.Where(o => o.Id == conditionId).SingleOrDefault();
@@ -55,7 +55,7 @@ namespace eCommerceStarterCode.Controllers
         }
 
         //-- DELETE api/Condition/delete/{conditionId}/ --//
-        [HttpDelete("delete/{conditionId}/")]
+        [HttpDelete("delete/{conditionId}")]
         public IActionResult DeleteCondition(int conditionId)
         {
             Condition condition = _context.Conditions.Where(c => c.Id == conditionId).SingleOrDefault();

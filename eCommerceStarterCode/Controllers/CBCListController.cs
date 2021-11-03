@@ -31,7 +31,7 @@ namespace eCommerceStarterCode.Controllers
             return Ok(CBCLists);
         }
 
-        [HttpGet("all/{userId}/")]
+        [HttpGet("all/{userId}")]
         public IActionResult GetAllCBCListsUser(string userId)
         {
             var UserCBC = _context.CBCLists.Where(uc => uc.UserId == userId).Include(uc => uc.CBC).ToList();

@@ -44,7 +44,7 @@ namespace eCommerceStarterCode.Controllers
         }
 
         //-- GET api/CBC/{testId} --//
-        [HttpGet("{testId}/")]
+        [HttpGet("{testId}")]
         public IActionResult GetIdOrders(int testId)
         {
             var selectedTest = _context.CBCs.Where(c => c.Id == testId).SingleOrDefault();
@@ -52,7 +52,7 @@ namespace eCommerceStarterCode.Controllers
         }
 
         //-- PUT api/CBC/edit/{testId} --//
-        [HttpPut("edit/{testId}/")]
+        [HttpPut("edit/{testId}")]
         public IActionResult UpdateCBC(int testId, [FromBody] CBC value)
         {
             var test = _context.CBCs.Where(o => o.Id == testId).SingleOrDefault();
@@ -83,7 +83,7 @@ namespace eCommerceStarterCode.Controllers
         }
 
         //-- DELETE api/CBC/delete/{testId}/ --//
-        [HttpDelete("delete/{testId}/")]
+        [HttpDelete("delete/{testId}")]
         public IActionResult DeleteCar(int testId)
         {
             CBC test = _context.CBCs.Where(c => c.Id == testId).SingleOrDefault();

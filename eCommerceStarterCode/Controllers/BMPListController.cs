@@ -31,7 +31,7 @@ namespace eCommerceStarterCode.Controllers
             return Ok(BMPLists);
         }
 
-        [HttpGet("all/{userId}/")]
+        [HttpGet("all/{userId}")]
         public IActionResult GetAllBMPListsUser(string userId)
         {
             var UserBMP = _context.BMPLists.Where(uc => uc.UserId == userId).Include(uc => uc.BMP).ToList();
