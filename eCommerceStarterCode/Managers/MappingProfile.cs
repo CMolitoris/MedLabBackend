@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using eCommerceStarterCode.DataTransferObjects;
 using eCommerceStarterCode.Models;
+using Profile = AutoMapper.Profile;
 
 namespace eCommerceStarterCode.Managers
 {

@@ -7,15 +7,14 @@ using System.Threading.Tasks;
 
 namespace eCommerceStarterCode.Models
 {
-    public class BMPList
+    public class CBCList
     {
         [Column(Order = 0), Key, ForeignKey("User")]
         public string UserId { get; set; }
         public User User { get; set; }
 
-        [Column(Order = 1), Key, ForeignKey("BMP")]
-        public int BMPId { get; set; }
-        public BMP BMP { get; set; }
-
+        [Column(Order = 1), Key, ForeignKey("CBC")]
+        public int CBCId { get; set; }
+        public CBC CBC { get; set; }
     }
 }

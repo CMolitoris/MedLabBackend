@@ -18,5 +18,9 @@ namespace eCommerceStarterCode.Models
         public double Bicarbonate { get; set; }
         public double Creatinine { get; set; }
         public double BUN { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime DateTime { get; set; }
     }
 }
