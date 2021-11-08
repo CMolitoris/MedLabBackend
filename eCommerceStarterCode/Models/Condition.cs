@@ -12,6 +12,7 @@ namespace eCommerceStarterCode.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public string DescriptionExtended { get; set; }
         public string Image { get; set; }
     }
 }
