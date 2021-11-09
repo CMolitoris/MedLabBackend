@@ -24,7 +24,7 @@ namespace eCommerceStarterCode.Controllers
         }
 
         //-- Get all CBCLists --//
-        [HttpGet("all/")]
+        [HttpGet]
         public IActionResult GetAllBMPLists()
         {
             var BMPLists = _context.BMPLists;
