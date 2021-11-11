@@ -3,6 +3,7 @@ using eCommerceStarterCode.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,11 +23,11 @@ namespace eCommerceStarterCode.Controllers
         }
 
         //Left out Authorize
-        [HttpGet("all")]
-        public IActionResult GetAllProfiles()
+        [HttpGet("{userId}")]
+        public IActionResult GetUserProfile(string userId)
         {
-            var profiles = _context.Profiles;
-            return Ok(profiles);
+            var profile = _context.Profiles.Where(p => p.UserId==userId).Include(p => p.User).SingleOrDefault();
+            return Ok(profile);
         }
 
         [HttpPost]
