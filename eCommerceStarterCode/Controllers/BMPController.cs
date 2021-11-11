@@ -76,11 +76,14 @@ namespace eCommerceStarterCode.Controllers
         }
 
         //-- DELETE api/BMP/delete/{testId}/ --//
-        [HttpDelete("delete/{testId}")]
-        public IActionResult DeleteCar(int testId)
+        [HttpDelete("delete/{testId}/{userId}")]
+        public IActionResult DeleteBMP(int testId,string userId)
         {
             BMP test = _context.BMPs.Where(c => c.Id == testId).SingleOrDefault();
             _context.BMPs.Remove(test);
+
+            BMPList list = _context.BMPLists.Where(l => l.UserId == userId && l.BMPId == testId).SingleOrDefault();
+            _context.BMPLists.Remove(list);
             _context.SaveChanges();
             return Ok(test);
         }

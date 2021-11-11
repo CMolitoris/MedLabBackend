@@ -83,11 +83,14 @@ namespace eCommerceStarterCode.Controllers
         }
 
         //-- DELETE api/CBC/delete/{testId}/ --//
-        [HttpDelete("delete/{testId}")]
-        public IActionResult DeleteCar(int testId)
+        [HttpDelete("delete/{testId}/{userId}")]
+        public IActionResult DeleteCBC(int testId,string userId)
         {
             CBC test = _context.CBCs.Where(c => c.Id == testId).SingleOrDefault();
             _context.CBCs.Remove(test);
+
+            CBCList list = _context.CBCLists.Where(l => l.UserId == userId && l.CBCId == testId).SingleOrDefault();
+            _context.CBCLists.Remove(list);
             _context.SaveChanges();
             return Ok(test);
         }
