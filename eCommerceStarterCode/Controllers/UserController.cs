@@ -66,6 +66,7 @@ namespace eCommerceStarterCode.Controllers
             user.StreetAddress = userDetails.StreetAddress;
             user.City = userDetails.City;
             user.State = userDetails.State;
+            user.Zip = userDetails.Zip;
 
 
             _context.Users.Update(user);
