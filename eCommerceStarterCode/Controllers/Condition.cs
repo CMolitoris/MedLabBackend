@@ -29,6 +29,13 @@ namespace eCommerceStarterCode.Controllers
             return Ok(conditions);
         }
 
+        [HttpGet("{conditionId}")]
+        public IActionResult GetCondition(int conditionId)
+        {
+            var condition = _context.Conditions.Where(c => c.Id == conditionId).SingleOrDefault();
+            return Ok(condition);
+        }
+
         //-- POST api/Condition/ --//
         [HttpPost]
         public IActionResult PostCondition([FromBody] Condition newCondition)
